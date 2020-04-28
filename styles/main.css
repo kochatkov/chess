@@ -1,0 +1,33 @@
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.head {
+  text-align: center; }
+
+.chess__field {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(8, 100px);
+  grid-gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.chess__black {
+  background: black; }
+
+.chess__white {
+  background: white; }
+
+body {
+  background: sandybrown; }
+
+/*# sourceMappingURL=main.css.map */

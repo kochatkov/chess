@@ -1,0 +1,20 @@
+.head {
+  text-align: center; }
+
+.chess__field {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(8, 100px);
+  grid-gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.chess__black {
+  background: black; }
+
+.chess__white {
+  background: white; }
+
+/*# sourceMappingURL=chess.css.map */
