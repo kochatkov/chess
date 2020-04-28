@@ -1,0 +1,22 @@
+.head {
+  text-align: center;
+}
+
+.chess {
+  &__field {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 100px);
+    grid-template-rows: repeat(8, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+  }
+
+  &__black {
+    background: black;
+  }
+
+  &__white {
+    background: white;
+  }
+}
