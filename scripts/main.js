@@ -4,12 +4,8 @@ const WHITE_CELL_COLOR = 'chess__white';
 const BLACK_CELL_COLOR = 'chess__black';
 const CHESS_FIELD = 'chess__field';
 
-const isWhite = () => (
-  WHITE_CELL_COLOR
-);
-
-const isBlack = () => (
-  BLACK_CELL_COLOR
+const changeColor = (i, j) => (
+  i % 2 === j % 2 ? WHITE_CELL_COLOR : BLACK_CELL_COLOR
 );
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,11 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let j = 0; j < 8; j++) {
       cell = document.createElement('div');
 
-      if (i % 2 === j % 2) {
-        cell.className = isWhite();
-      } else {
-        cell.className = isBlack();
-      }
+      cell.className = changeColor(i, j);
+
       div.append(cell);
     }
   }
