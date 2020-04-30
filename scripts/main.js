@@ -4,11 +4,11 @@ const WHITE_CELL_COLOR = 'chess__white';
 const BLACK_CELL_COLOR = 'chess__black';
 const CHESS_FIELD = 'chess__field';
 
-const isWhite = (cell) => (
+const isWhite = () => (
   WHITE_CELL_COLOR
 );
 
-const isBlack = (cell) => (
+const isBlack = () => (
   BLACK_CELL_COLOR
 );
 
