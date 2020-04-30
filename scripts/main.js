@@ -4,10 +4,18 @@ const WHITE_CELL_COLOR = 'chess__white';
 const BLACK_CELL_COLOR = 'chess__black';
 const CHESS_FIELD = 'chess__field';
 
+const isWhite = (cell) => (
+  WHITE_CELL_COLOR
+);
+
+const isBlack = (cell) => (
+  BLACK_CELL_COLOR
+);
+
 document.addEventListener('DOMContentLoaded', () => {
   const section = document.querySelector('.chess');
   const div = document.createElement('div');
-  let cells;
+  let cell;
 
   section.append(div);
 
@@ -15,17 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
-      cells = document.createElement('div');
-      changeCellColor(cells, i, j);
-      div.append(cells);
+      cell = document.createElement('div');
+
+      if (i % 2 === j % 2) {
+        cell.className = isWhite();
+      } else {
+        cell.className = isBlack();
+      }
+      div.append(cell);
     }
   }
 });
-
-function changeCellColor(cells, i, j) {
-  if (i % 2 === j % 2) {
-    cells.className = WHITE_CELL_COLOR;
-  } else {
-    cells.className = BLACK_CELL_COLOR;
-  }
-}
