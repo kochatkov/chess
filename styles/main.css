@@ -11,23 +11,91 @@ h1 {
 .head {
   text-align: center; }
 
-.chess__field {
-  margin: 0;
+.chess {
   display: grid;
-  grid-template-columns: repeat(8, 100px);
-  grid-template-rows: repeat(8, 100px);
-  grid-gap: 10px;
+  grid-template-columns: 10px 350px 10px;
+  grid-template-rows: repeat(3, auto);
+  gap: 10px 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
-
-.chess__black {
-  background: black; }
-
-.chess__white {
-  background: white; }
+          justify-content: center;
+  width: 70%;
+  margin: 0 auto; }
+  @media screen and (min-width: 900px) {
+    .chess {
+      grid-template-columns: 10px 500px 10px; } }
+  @media screen and (min-width: 1280px) {
+    .chess {
+      grid-template-columns: 10px 920px 10px; } }
+  .chess__field {
+    margin: 0;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    display: grid;
+    grid-template-columns: repeat(8, 30px);
+    grid-template-rows: repeat(8, 30px);
+    grid-gap: 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    @media screen and (min-width: 900px) {
+      .chess__field {
+        grid-template-columns: repeat(8, 50px);
+        grid-template-rows: repeat(8, 50px); } }
+    @media screen and (min-width: 1280px) {
+      .chess__field {
+        grid-template-columns: repeat(8, 100px);
+        grid-template-rows: repeat(8, 100px); } }
+  .chess__black {
+    background: black; }
+  .chess__white {
+    background: white; }
+  .chess__column-right {
+    grid-column-start: 1;
+    grid-row-start: 2; }
+  .chess__column-left {
+    grid-column-start: 3;
+    grid-row-start: 2; }
+  .chess__column {
+    display: grid;
+    grid-template-rows: repeat(8, 30px);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-self: center;
+    gap: 10px; }
+    @media screen and (min-width: 900px) {
+      .chess__column {
+        grid-template-rows: repeat(8, 50px); } }
+    @media screen and (min-width: 1280px) {
+      .chess__column {
+        grid-template-rows: repeat(8, 100px); } }
+  .chess__number {
+    margin: 0;
+    font-size: 5vh; }
+  .chess__letters {
+    display: grid;
+    grid-template-columns: repeat(8, 30px);
+    justify-items: center;
+    justify-self: center;
+    gap: 10px; }
+    @media screen and (min-width: 900px) {
+      .chess__letters {
+        grid-template-columns: repeat(8, 50px); } }
+    @media screen and (min-width: 1280px) {
+      .chess__letters {
+        grid-template-columns: repeat(8, 100px); } }
+  .chess__letters-up {
+    grid-row-start: 1;
+    grid-column-start: 2; }
+  .chess__letters-down {
+    grid-row-start: 3;
+    grid-column-start: 2; }
+  .chess__letter {
+    margin: 0;
+    font-size: 5vh; }
 
 body {
-  background: sandybrown; }
+  background: darkgrey; }
 
 /*# sourceMappingURL=main.css.map */
