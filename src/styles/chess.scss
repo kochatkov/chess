@@ -1,15 +1,41 @@
+@import "utils/vars";
+
 .head {
   text-align: center;
 }
 
 .chess {
+  display: grid;
+  grid-template-columns: 10px 350px 10px;
+  grid-template-rows: repeat(3, auto);
+  gap: 10px 0;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 10px 500px 10px;
+  }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 10px 920px 10px;
+  }
+
   &__field {
     margin: 0;
+    grid-row-start: 2;
+    grid-column-start: 2;
     display: grid;
-    grid-template-columns: repeat(8, 100px);
-    grid-template-rows: repeat(8, 100px);
+    grid-template-columns: repeat(8, $main-size);
+    grid-template-rows: repeat(8, $main-size);
     grid-gap: 10px;
     justify-content: center;
+    @media screen and (min-width: 900px) {
+      grid-template-columns: repeat(8, $middle-size);
+      grid-template-rows: repeat(8, $middle-size);
+    }
+    @media screen and (min-width: 1280px) {
+      grid-template-columns: repeat(8, $hd-size);
+      grid-template-rows: repeat(8, $hd-size);
+    }
   }
 
   &__black {
@@ -18,5 +44,63 @@
 
   &__white {
     background: white;
+  }
+
+  &__column-right {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+
+  &__column-left {
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+
+  &__column {
+    display: grid;
+    grid-template-rows: repeat(8, $main-size);
+    align-items: center;
+    justify-self: center;
+    gap: 10px;
+    @media screen and (min-width: 900px) {
+      grid-template-rows: repeat(8, $middle-size);
+    }
+    @media screen and (min-width: 1280px) {
+      grid-template-rows: repeat(8, $hd-size);
+    }
+  }
+
+  &__number {
+    margin: 0;
+    font-size: 5vh;
+  }
+
+  &__letters {
+    display: grid;
+    grid-template-columns: repeat(8, $main-size);
+    justify-items: center;
+    justify-self: center;
+    gap: 10px;
+    @media screen and (min-width: 900px) {
+      grid-template-columns: repeat(8, $middle-size);
+    }
+    @media screen and (min-width: 1280px) {
+      grid-template-columns: repeat(8, $hd-size);
+    }
+  }
+
+  &__letters-up {
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+
+  &__letters-down {
+    grid-row-start: 3;
+    grid-column-start: 2;
+  }
+
+  &__letter {
+    margin: 0;
+    font-size: 5vh;
   }
 }
